@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'students/index'
+    get 'students/index'
 
-  get 'students/show'
+    get 'dojos/:dojo_id/students' => 'dojo#index'
 
-  get 'students/new'
+    get 'students/show'
 
-  get 'students/edit'
+    get 'students/new'
+
+    get 'students/edit'
 
     root 'dojos#index'
 
@@ -24,6 +26,18 @@ Rails.application.routes.draw do
     patch 'dojos/:id' => 'dojos#update'
 
     delete 'dojos/:id' => 'dojos#destroy'
+
+    get 'dojos/:id/students/new' => 'students#new'
+
+    post 'dojos/:id/students' => 'students#create'
+
+    get 'dojos/:id/students/:sid' => 'students#show'
+
+    delete 'dojos/:id/students/:sid' => 'students#destroy'
+
+    get 'dojos/:id/students/:sid/edit' => 'students#edit'
+
+    patch 'dojos/:id/students/:id' => 'students#update'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

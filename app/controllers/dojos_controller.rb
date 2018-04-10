@@ -3,13 +3,16 @@ class DojosController < ApplicationController
       @dojos = Dojo.all
   end
 
+
   def new
   end
+
 
   def create
       Dojo.create(dojo_params)
       redirect_to "/"
   end
+
 
   def show
       @dojo = Dojo.where(id: params[:id])
@@ -24,15 +27,18 @@ class DojosController < ApplicationController
       render 'edit'
   end
 
+
   def update
       Dojo.find(params[:id]).update(edit_params)
       redirect_to "/"
   end
 
+
   def destroy
     Dojo.find(params[:id]).destroy
     redirect_to "/"
   end
+
 
   private
     def dojo_params

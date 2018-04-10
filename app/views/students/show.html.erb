@@ -1,2 +1,26 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1><%= @dojo.branch %>'s <%= @student.fname%> <%= @student.lname%></h1>
+
+<h3><%= @student.email %></h3>
+
+
+<h2>Cohort</h2>
+
+<table style="width: 600px; text-align:center">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <% @cohort.each do |x| %>
+    <tr>
+        <td> <%= x.fname %> </td>
+        <td> <%= x.lname %> </td>
+        <td> <%= x.email %> </td>
+    </tr>
+    <% end %>
+</table>
+
+<br><br>
+
+<a href="/">home</a>
+<a href="#">edit</a>

@@ -19,9 +19,9 @@
         <td> <%= student.lname %> </td>
         <td> <%= student.email %> </td>
         <td>
-            <a href="#">show</a>
-            <a href="#">edit</a>
-            <a href="#">destroy</a>
+            <a href="/dojos/<%= @dojo[0]['id']%>/students/<%= student.id %>">show</a>
+            <a href="/dojos/<%= @dojo[0]['id']%>/students/<%= student.id %>/edit">edit</a>
+            <a href="/dojos/<%= @dojo[0]['id']%>/students/<%= student.id %>" data-method="delete">destroy</a>
         </td>
     </tr>
     <% end %>
@@ -30,4 +30,5 @@
 
 <br><br>
 <a href="/">Home</a>
-<a href="#">Add Student</a>
+<a href="/dojos/<%= @dojo[0]['id']%>/students/new">Add Student</a>
+<p><%= @dojo[0]['id']%></p>
