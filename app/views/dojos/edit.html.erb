@@ -1,0 +1,17 @@
+<h1>Editing Dojo</h1>
+<p><%= @dojo['branch'] %></p>
+<p><%= @dojo['id'] %></p>
+
+<form action="/dojos/<%= @dojo['id'] %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="patch">
+    Branch: <input type="text" name="edit[branch]" value="<%= @dojo['branch'] %>">
+    <br>
+    Street: <input type="text" name="edit[street]" value="<%= @dojo['street'] %>">
+    <br>
+    City: <input type="text" name="edit[city]" value="<%= @dojo['city'] %>">
+    <br>
+    State: <input type="text" name="edit[state]" value='<%= @dojo['state'] %>'>
+    <br>
+    <input type="submit" value="Update">
+</form>
