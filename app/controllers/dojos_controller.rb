@@ -13,6 +13,7 @@ class DojosController < ApplicationController
 
   def show
       @dojo = Dojo.where(id: params[:id])
+      @students = Dojo.find(params[:id]).students
       # puts "Dojo we are interested in ----->", @dojo[0]['branch']
       render 'show'
   end

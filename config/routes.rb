@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'students/index'
+
+  get 'students/show'
+
+  get 'students/new'
+
+  get 'students/edit'
+
     root 'dojos#index'
 
     get 'dojos/index'

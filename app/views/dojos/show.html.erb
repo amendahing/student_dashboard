@@ -1,9 +1,33 @@
-<h1><%= @dojo[0]['branch'] %></h1>
+<h1><%= @dojo[0]['branch'] %></h1> <a href="#">edit</a>
 
 <p>Address: <%= @dojo[0]['street'] %></p>
 <p>City: <%= @dojo[0]['city'] %>, State: <%= @dojo[0]['state'] %></p>
 
 <br>
 
+<h3>Student Roster</h3>
+<table style="width: 600px; text-align:center">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <% @students.each do |student| %>
+    <tr>
+        <td> <%= student.fname %> </td>
+        <td> <%= student.lname %> </td>
+        <td> <%= student.email %> </td>
+        <td>
+            <a href="#">show</a>
+            <a href="#">edit</a>
+            <a href="#">destroy</a>
+        </td>
+    </tr>
+    <% end %>
+</table>
+
+
+<br><br>
 <a href="/">Home</a>
-<a href="#">Edit</a>
+<a href="#">Add Student</a>
