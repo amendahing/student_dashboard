@@ -16,15 +16,17 @@ class StudentsController < ApplicationController
     def create
         Student.create(fname: params[:fname], lname: params[:lname], email: params[:email], dojo: Dojo.find(params[:dojo]))
         redirect_to '/'
-
     end
 
     def edit
         @student = Student.find(params[:sid])
+        @dojo = Dojo.find(params[:id])
         @dojos = Dojo.all
     end
 
     def update
+        Student.find(params[:id]).update(fname: params[:fname], lname: params[:lname], email: params[:email], dojo: Dojo.find(params[:dojo]))
+        redirect_to '/'
     end
 
     def destroy
